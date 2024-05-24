@@ -92,7 +92,7 @@ function getGridTemplateColumnsMinMax(numColumns: number) {
   return `repeat(${numColumns}, minmax(${100 / numColumns}%, auto))`;
 }
 function getGridTemplateColumnsRepeat(numColumns: number) {
-  return `repear(${numColumns}, ${100 / numColumns}%)`;
+  return `repeat(${numColumns}, ${100 / numColumns}%)`;
 }
 
 export const Grid = styled.div`
@@ -139,7 +139,7 @@ export const Card = styled.a`
   }
 
   ${media.hoverNonTouch} {
-    :hover {
+    &:hover {
       background: rgba(var(--card-rgb), 0.1);
       border: 1px solid rgba(var(--card-border-rgb), 0.15);
 
@@ -150,7 +150,7 @@ export const Card = styled.a`
   }
 
   ${media.prefersReducedMotion} {
-    :hover span {
+    &:hover span {
       transform: none;
     }
   }
@@ -171,7 +171,7 @@ export const Center = styled.div`
   position: relative;
   padding: 4rem 0;
 
-  ::before {
+  &::before {
     background: var(--secondary-glow);
     border-radius: 50%;
     width: 480px;
@@ -179,15 +179,15 @@ export const Center = styled.div`
     margin-left: -400px;
   }
 
-  ::after {
+  &::after {
     background: var(--primary-glow);
     width: 240px;
     height: 180px;
     z-index: -1;
   }
 
-  ::before,
-  ::after {
+  &::before,
+  &::after {
     content: '';
     left: 50%;
     position: absolute;
@@ -198,7 +198,7 @@ export const Center = styled.div`
   ${media.mobileStyle} {
     padding: 8rem 0 6rem;
 
-    ::before {
+    &::before {
       transform: none;
       height: 300px;
     }
